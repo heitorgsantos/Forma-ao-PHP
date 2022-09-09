@@ -3,9 +3,9 @@
 class Conta
 {
 
-    public $cpf;
-    public $nome;
-    public $saldo;
+    private $cpf;
+    private $nome;
+    private $saldo;
 
     public function sacar(float $valorSacar)
     {
