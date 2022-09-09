@@ -7,6 +7,13 @@ class Conta
     private $nome;
     private $saldo = 0;
 
+    public function __construct(string $nome, string $cpf)
+    {
+        $this->nome = $nome;
+        $this->cpf = $cpf;
+        $this->saldo = 0;
+    }
+
     public function sacar(float $valorSacar)
     {
         if ($valorSacar > $this->saldo) {
@@ -40,19 +47,23 @@ class Conta
         return $this->saldo;
     }
 
-    public function setCpf(string $cpf) {
-        return $this->cpf = $cpf;
-    }
+    // public function setCpf(string $cpf)
+    // {
+    //     return $this->cpf = $cpf;
+    // }
 
-    public function getCpf() {
+    public function getCpf()
+    {
         return $this->cpf;
     }
 
-    public function setName(string $nome) {
-        return $this->nome = $nome;
-    }
+    // public function setName(string $nome)
+    // {
+    //     return $this->nome = $nome;
+    // }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->nome;
     }
 }

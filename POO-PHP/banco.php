@@ -4,11 +4,11 @@ require 'Conta.php';
 
 // inserindo dados na classe
 
-$segundaConta = new Conta();
+$segundaConta = new Conta('Heitor Gomes', '142.733.187-17');
 
 
-$segundaConta->setName('Heitor Gomes dos Santos');
-$segundaConta->setCpf('142.733.187-17');
+// $segundaConta->setName('Heitor Gomes dos Santos');
+// $segundaConta->setCpf('142.733.187-17');
 $segundaConta->depositar(1000);
 
 // consulta dos dados inseridos
