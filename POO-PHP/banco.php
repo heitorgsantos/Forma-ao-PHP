@@ -4,7 +4,7 @@ require 'Conta.php';
 
 // inserindo dados na classe
 
-$segundaConta = new Conta('Heitor Gomes', '142.733.187-17');
+$segundaConta = new Conta('Heit', '142.733.187-17');
 
 
 // $segundaConta->setName('Heitor Gomes dos Santos');

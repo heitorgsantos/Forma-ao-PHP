@@ -9,6 +9,7 @@ class Conta
 
     public function __construct(string $nome, string $cpf)
     {
+        $this->validateName($nome);
         $this->nome = $nome;
         $this->cpf = $cpf;
         $this->saldo = 0;
@@ -65,5 +66,12 @@ class Conta
     public function getName()
     {
         return $this->nome;
+    }
+
+    private function validateName(string $nome) {
+        if(strlen($nome) < 5 ){
+            echo "Insira seu nome completo";
+            exit;
+        }
     }
 }
