@@ -35,7 +35,7 @@ class Conta
         $contaDestino->depositar($valorTransferir);
     }
 
-    public function recuperarSaldo(): float
+    public function getSaldo(): float
     {
         return $this->saldo;
     }
@@ -56,27 +56,3 @@ class Conta
         return $this->nome;
     }
 }
-
-$primeiraConta = new Conta();
-// $primeiraConta->saldo = 500;
-// $primeiraConta->cpf = '142.733.187-17';
-// $primeiraConta->nome = "Heitor Gomes dos Santos";
-
-$segundaConta = new Conta();
-// $segundaConta->novoCadastro('Joao', 142123456789, 500);
-
-// $primeiraConta->sacar(100);
-
-$segundaConta->setName('Heitor Gomes dos Santos');
-$segundaConta->setCpf('142.733.187-17');
-$segundaConta->depositar(1000);
-
-// $primeiraConta->transferir(100, $segundaConta);
-
-echo $segundaConta->getName();
-echo $segundaConta->getCpf();
-
-
-// var_dump($segundaConta);
-
-// var_dump($primeiraConta);
