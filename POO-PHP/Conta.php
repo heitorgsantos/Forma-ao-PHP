@@ -3,16 +3,21 @@
 class Conta
 {
 
-    private $cpf;
-    private $nome;
+    private $titular;
     private $saldo = 0;
+    private static $numeroDeContas = 0;
 
-    public function __construct(string $nome, string $cpf)
+    public function __construct(Titular $titular)
     {
-        $this->validateName($nome);
-        $this->nome = $nome;
-        $this->cpf = $cpf;
+        $this->titular = $titular;
         $this->saldo = 0;
+
+        self::$numeroDeContas++;
+    }
+
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
     }
 
     public function sacar(float $valorSacar)
@@ -48,30 +53,13 @@ class Conta
         return $this->saldo;
     }
 
-    // public function setCpf(string $cpf)
-    // {
-    //     return $this->cpf = $cpf;
-    // }
-
-    public function getCpf()
+    public function recuperaNomeTitular()
     {
-        return $this->cpf;
+        return $this->titular->getName();
     }
 
-    // public function setName(string $nome)
-    // {
-    //     return $this->nome = $nome;
-    // }
-
-    public function getName()
+    public function recuperaCpfTitular()
     {
-        return $this->nome;
-    }
-
-    private function validateName(string $nome) {
-        if(strlen($nome) < 5 ){
-            echo "Insira seu nome completo";
-            exit;
-        }
+        return $this->titular->getCpf();
     }
 }
