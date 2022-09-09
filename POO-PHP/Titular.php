@@ -5,7 +5,7 @@ class Titular
     private $nomeTitular;
     private $cpf;
 
-    public function __construct(string $nomeTitular, CPF $cpf )
+    public function __construct(string $nomeTitular, CPF $cpf)
     {
         $this->cpf = $cpf;
         $this->validateName($nomeTitular);
@@ -22,8 +22,9 @@ class Titular
         return $this->nomeTitular;
     }
 
-    private function validateName(string $nome) {
-        if(strlen($nome) < 5 ){
+    private function validateName(string $nome)
+    {
+        if (strlen($nome) < 5) {
             echo "Insira seu nome completo";
             exit();
         }
