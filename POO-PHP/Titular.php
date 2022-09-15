@@ -4,12 +4,14 @@ class Titular
 {
     private $nomeTitular;
     private $cpf;
+    private $endereco;
 
-    public function __construct(string $nomeTitular, CPF $cpf)
+    public function __construct(string $nomeTitular, CPF $cpf, Endereco $endereco)
     {
         $this->cpf = $cpf;
         $this->validateName($nomeTitular);
         $this->nomeTitular = $nomeTitular;
+        $this->endereco = $endereco;
     }
 
     public function getCpf()
