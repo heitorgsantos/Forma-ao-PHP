@@ -1,5 +1,10 @@
 <?php
 
+
+namespace Alura\Banco\Modelo\Conta;
+
+use Alura\Banco\Modelo\Conta\Titular;
+
 class Conta
 {
 
@@ -55,7 +60,7 @@ class Conta
 
     public function recuperaNomeTitular()
     {
-        return $this->titular->getName();
+        return $this->titular->getNome();
     }
 
     public function recuperaCpfTitular()

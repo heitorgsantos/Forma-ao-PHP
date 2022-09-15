@@ -1,10 +1,12 @@
 <?php
 
+namespace Alura\Banco\Modelo;
+
 class CPF
 {
     private $numero;
 
-    public function __construct(string $numero)
+    public function __construct( $numero)
     {
         $numeroCPF = "/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/";
         if (preg_match($numeroCPF, $numero) === false) {

@@ -1,5 +1,7 @@
 <?php
 
+namespace Alura\Banco\Modelo;
+
 class Endereco
 {
     private $cidade;
@@ -16,19 +18,25 @@ class Endereco
         $this->numero = $numero;
     }
 
-    public function getCidade() {
+    public function getCidade()
+    {
         return $this->cidade;
     }
 
-    public function getBairro() {
+    public function getBairro()
+    {
         return $this->bairro;
     }
 
-    public function getRua() {
+    public function getRua()
+    {
         return $this->rua;
     }
 
-    public function getNumero() {
+    public function getNumero()
+    {
         return $this->numero;
     }
+
+ 
 }
