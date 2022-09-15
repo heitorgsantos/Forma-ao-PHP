@@ -3,6 +3,7 @@
 require_once 'Conta.php';
 require_once 'Titular.php';
 require_once 'CPF.php';
+require_once 'Endereco.php';
 
 // inserindo dados na classe
 
@@ -12,10 +13,24 @@ require_once 'CPF.php';
 // $segundaConta->setCpf('142.733.187-17');
 // $segundaConta->depositar(1000);
 
-$heitor = new Titular('Heitor Gomes', new CPF('14273318717'));
-$contaUm = new Conta($heitor);
+$adress = new Endereco('Ibatiba', 'Novo Horizonte', 'Olindo Florindo', '79');
 
-var_dump($contaUm);
+$heitor = new Titular('Heitor Gomes', new CPF('14273318717'), $adress);
+
+$contaUm = new Conta($heitor,);
+
+// $joao = new Titular('Joao Maria', new CPF('12345678912'));
+// $contaDois = new Conta($joao);
+
+// echo $contaUm->depositar(500);
+
+// echo $contaUm->transferir(100, $contaDois);
+
+// var_dump($contaDois);
+
+echo $adress->getCidade();
+
+// var_dump($contaUm);
 
 // consulta dos dados inseridos
 
