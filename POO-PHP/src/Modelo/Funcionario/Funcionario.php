@@ -8,19 +8,12 @@ use Alura\Banco\Modelo\CPF;
 abstract class Funcionario extends Pessoa
 {
 
-    private $cargo;
     private $salario;
 
-    public function __construct($nome, CPF $cpf, $cargo, $salario)
+    public function __construct($nome, CPF $cpf, $salario)
     {
         parent::__construct($nome, $cpf);
-        $this->cargo = $cargo;
         $this->salario = $salario;
-    }
-
-    public function getCargo()
-    {
-        return $this->cargo;
     }
 
     public function updateName($name)
@@ -33,7 +26,7 @@ abstract class Funcionario extends Pessoa
         if ($valorAumento < 0) {
             echo 'Aumento deve ser positivo';
         }
-        return;
+        return $this->salario = $valorAumento;
     }
 
     public function recuperaSalario()
@@ -41,9 +34,5 @@ abstract class Funcionario extends Pessoa
         return $this->salario;
     }
 
-
-    public function calculaBonificacao()
-    {
-        return $this->salario * 0.1;
-    }
+    abstract public function calculaBonificacao();
 }

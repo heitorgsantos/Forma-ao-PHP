@@ -8,7 +8,7 @@ use Alura\Banco\Modelo\Funcionario\{Desenvolvedor};
 
 // $umFunc = new Funcionario('Heitor Gomes', new CPF('14273318717'), 'Desenvolvedor', 1000); 
 
-$dev = new Desenvolvedor('Heitorsantos', new CPF('12345678948'), "dev", 1000);
+$dev = new Desenvolvedor('Heitorsantos', new CPF('12345678948'), 1000);
 
 // $dev->calculaBonificacao();
 
