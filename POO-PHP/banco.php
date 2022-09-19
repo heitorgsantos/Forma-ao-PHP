@@ -1,41 +1,27 @@
 <?php
 
-spl_autoload_register(function ($path) {
-    $caminho = str_replace('Alura\\Banco', 'src', $path);
-    $caminho = str_replace('\\', DIRECTORY_SEPARATOR, $caminho);
-    $caminho .= '.php';
-    echo $caminho;
+require_once 'autoload.php';
 
-    if(file_exists($caminho)) {
-        require_once $caminho;
-    }
-});
-
-use Alura\Banco\Modelo\Funcionario;
-use Alura\Banco\Modelo\Conta\Conta;
-use Alura\Banco\Modelo\CPF;
-use Alura\Banco\Modelo\Pessoa;
 use Alura\Banco\Modelo\Conta\Titular;
 use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Conta\Conta;
 
-// $person = new Pessoa('Heitor Gomes', new CPF('14273318717'));
-$fun = new Funcionario('Heitor Gomes', new CPF("14273318717"), 'Supervisor');
+$endereco = new Endereco('Petrópolis', 'um bairro', 'minha rua', '71B');
+$vinicius = new Titular( 'Vinicius Dias', new CPF('123.456.789-10'), $endereco);
+$primeiraConta = new Conta($vinicius);
+$primeiraConta->depositar(500);
+$primeiraConta->sacar(300); // isso é ok
 
-$fun->updateName("Maria Joao");
+echo $primeiraConta->recuperaNomeTitular() . PHP_EOL;
+echo $primeiraConta->recuperaCpfTitular() . PHP_EOL;
+// echo $primeiraConta->recuperaSaldo() . PHP_EOL;
 
-var_dump($fun);
-exit();
+// $patricia = new Titular(new CPF('698.549.548-10'), 'Patricia', $endereco);
+// $segundaConta = new Conta($patricia);
+// var_dump($segundaConta);
 
-// $adress = new Endereco('Ibatiba', 'Novo Horizonte', 'Olindo Florindo', '79');
-
-// // $newAddress = $adress->novoEnd("Iuna", "Santa", "Trinta", '79b');
-
-// $heitor = new Titular('Heitor Gomes', new CPF('14273318717'), $adress);
-
-
-
-// $contaUm = new Conta($heitor,);
-
-
-
-// var_dump($contaUm);
+// $outroEndereco = new Endereco('A', 'b', 'c', '1D');
+// $outra = new Conta(new Titular(new CPF('123.654.789-01'), 'Abcdefg', $outroEndereco));
+// unset($segundaConta);
+// echo Conta::recuperaNumeroDeContas();
